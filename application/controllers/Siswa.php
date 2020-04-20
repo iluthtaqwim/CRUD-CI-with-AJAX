@@ -34,7 +34,7 @@ class Siswa extends CI_Controller
 			'nama' => $this->input->post('nama'),
 			'tgl_lahir' => $this->input->post('tgl'),
 			'alamat' => $this->input->post('alamat'),
-
+			'password' => $this->input->post('password')
 		);
 
 
@@ -54,7 +54,7 @@ class Siswa extends CI_Controller
 			'nama' => $this->input->post('nama'),
 			'tgl_lahir' => $this->input->post('tgl'),
 			'alamat' => $this->input->post('alamat'),
-
+			'password' => $this->input->post('password')
 		);
 
 		$this->siswa->update($this->input->post('hidden_id'), $siswa);
@@ -73,7 +73,7 @@ class Siswa extends CI_Controller
 			'nama' => $this->input->post('nama'),
 			'tgl_lahir' => $this->input->post('tgl'),
 			'alamat' => $this->input->post('alamat'),
-
+			'password' => $this->input->post('password')
 		);
 		if ($this->input->post('action') == 'fetch_single') {
 

@@ -28,6 +28,7 @@ class Crud extends CI_Controller
             'nama' => $this->input->post('nama'),
             'tgl_lahir' => $this->input->post('tgl'),
             'alamat' => $this->input->post('alamat'),
+            'password' => $this->input->post('password'),
 
         );
 
@@ -46,6 +47,7 @@ class Crud extends CI_Controller
             'nama' => $this->input->post('nama'),
             'tgl_lahir' => $this->input->post('tgl'),
             'alamat' => $this->input->post('alamat'),
+            'password' => $this->input->post('password'),
 
         );
 
@@ -65,13 +67,12 @@ class Crud extends CI_Controller
             'nama' => $this->input->post('nama'),
             'tgl_lahir' => $this->input->post('tgl'),
             'alamat' => $this->input->post('alamat'),
+            'password' => $this->input->post('password'),
 
         );
         if ($_POST['action'] == 'fetch_single') {
 
             $result = $this->siswa->getFetch($id_siswa);
-
-
         }
         echo json_encode($result);
 

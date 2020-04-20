@@ -32,7 +32,7 @@
                     if (isset($_SESSION['logged_in'])) {
 
                         echo '<li class="nav-item">
-						<a class="nav-link" href="auth/logout">' . $_SESSION['nis'] . '</a>
+						<a class="nav-link" href="' . base_url("index.php/auth/logout") . '">' . $_SESSION['nis'] . '</a>
 					</li>';
                     } else {
 

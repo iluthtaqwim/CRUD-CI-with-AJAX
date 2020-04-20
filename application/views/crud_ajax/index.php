@@ -91,6 +91,11 @@
             <input type="text" class="form-control" name="alamat" id="alamat" aria-describedby="helpId" placeholder="">
             <span id="error_alamat" class="text-danger"></span>
         </div>
+        <div class="form-group">
+            <label for="">Password</label>
+            <input type="text" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="">
+            <span id="error_pasword" class="text-danger"></span>
+        </div>
 
         <div class="form-group">
             <input type="hidden" name="action" id="action" value="insert" />
@@ -176,6 +181,7 @@
                     $('#alamat').val(data.alamat);
                     $('#tgl').val(data.tgl_lahir);
                     $('#nis').val(data.nis);
+                    $('#password').val(data.password);
                     $('#model').attr('title', 'Edit Data');
                     $('#action').val('update');
                     $('#hidden_id').val(id);
@@ -199,6 +205,7 @@
             var error_alamat = '';
             var error_tgl = '';
             var error_nis = '';
+            var error_password = '';
             if ($('#nama').val() == '') {
                 error_nama = 'Name is required';
                 $('#error_nama').text(error_nama);
@@ -235,8 +242,17 @@
                 $('#error_nis').text(error_nis);
                 $('#nis').css('border-color', '');
             }
+            if ($('#password').val() == '') {
+                error_password = 'Password is required';
+                $('#error_password').text(error_password);
+                $('#password').css('border-color', '#cc0000');
+            } else {
+                error_password = '';
+                $('#error_password').text(error_nis);
+                $('#password').css('border-color', '');
+            }
 
-            if (error_nama != '' || error_alamat != '' || error_tgl != '' || error_nis != '') {
+            if (error_nama != '' || error_alamat != '' || error_tgl != '' || error_nis != '' || error_password != '') {
                 return false;
             } else {
 

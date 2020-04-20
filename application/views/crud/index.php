@@ -106,6 +106,11 @@
                             <label for="">alamat</label>
                             <input type="text" class="form-control" name="alamat" aria-describedby="helpId" placeholder="">
                         </div>
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="text" class="form-control" name="pass" id="pass" aria-describedby="helpId" placeholder="">
+                            <span id="error_pasword" class="text-danger"></span>
+                        </div>
 
                 </div>
                 <div class="modal-footer">
@@ -148,6 +153,11 @@
                             <label for="">alamat</label>
                             <input type="text" class="form-control" name="alamat" id="alamat" aria-describedby="helpId" placeholder="">
                             <span id="error_alamat" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="text" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="">
+                            <span id="error_pasword" class="text-danger"></span>
                         </div>
 
 
@@ -252,7 +262,7 @@
             event.preventDefault();
             var form_data = $(this).serialize();
             $.ajax({
-                url: 'siswa/update_siswa',
+                url: '<?php echo base_url('index.php/siswa/update_siswa') ?>',
                 dataType: 'json',
                 method: "POST",
                 data: form_data,
@@ -286,6 +296,7 @@
                     $('#alamat').val(data.alamat);
                     $('#tgl').val(data.tgl_lahir);
                     $('#nis').val(data.nis);
+                    $('#password').val(data.password);
                     $('#action').val('update');
                     $('#hidden_id').val(id);
                     $('#form_action').val('Update');
